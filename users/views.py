@@ -1,12 +1,9 @@
 from rest_framework.views import APIView, Request, Response,status
-
 from users.permissions import IsUserOrAdm
-from  .serializers import LoginSerializer, UserSerializer
+from  .serializers import UserSerializer
 from .models import User
 from rest_framework_simplejwt.views import TokenObtainPairView
-import ipdb
 from django.shortcuts import get_object_or_404
-from rest_framework.permissions import IsAuthenticated
 from rest_framework_simplejwt.authentication import JWTAuthentication
 
 
