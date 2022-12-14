@@ -1,6 +1,6 @@
 from rest_framework.views import APIView, Request, Response,status
 
-from users.permissions import IsOwnerOrAdmin
+from users.permissions import IsUserOrAdm
 from  .serializers import LoginSerializer, UserSerializer
 from .models import User
 from rest_framework_simplejwt.views import TokenObtainPairView
@@ -33,7 +33,7 @@ class RegisterUser(APIView):
 
 class UserDetail(APIView):
     authentication_classes = [JWTAuthentication]
-    permission_classes = [IsOwnerOrAdmin]
+    permission_classes = [IsUserOrAdm]
 
     
     def get(self, request: Request, user_id)-> Response:
